@@ -20,9 +20,11 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        // Загадать число
         Random random = new Random();
         secretNumber = random.nextInt(100) + 1;
 
+        // Элементы интерфейса
         messageLabel = new JLabel("Введите число от 1 до 100", SwingConstants.CENTER);
 
         inputField = new JTextField();
@@ -31,6 +33,7 @@ public class Main extends JFrame {
 
         attemptsLabel = new JLabel("Попыток: 0", SwingConstants.CENTER);
 
+        // Layout
         setLayout(new GridLayout(4, 1, 10, 10));
 
         add(messageLabel);
@@ -38,6 +41,7 @@ public class Main extends JFrame {
         add(checkButton);
         add(attemptsLabel);
 
+        // Обработка кнопки
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
